@@ -14,7 +14,7 @@ public typealias Environ = [String:AnyObject]
 public typealias Status = String
 public typealias Header = (String, String)
 public typealias Headers = [Header]
-public typealias Body = String
+public typealias Body = String?
 public typealias Response = (Status, Headers, Body)
 
 public typealias NestApplication = (Environ) -> (Response)

@@ -27,7 +27,7 @@ class InquilineTests: XCTestCase {
   }
 
   func testBodyIsString() {
-    let status:Body = "Hello World"
-    XCTAssertTrue((status as Any) is String)
+    let body:Body = "Hello World"
+    XCTAssertNotNil(body as String?)
   }
 }
