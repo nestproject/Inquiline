@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name = 'Inquiline'
   spec.version = '0.1.0'
-  spec.summary = 'Collection of utilities to aid use of the Nest Web Server Gateway Interface.'
+  spec.summary = 'Collection of type aliases and constants aid use of the Nest Web Server Gateway Interface.'
   spec.homepage = 'https://github.com/nestproject/'
   spec.license = { :type => 'BSD', :file => 'LICENSE' }
   spec.author = { 'Kyle Fuller' => 'kyle@fuller.li' }
