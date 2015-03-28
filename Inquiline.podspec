@@ -11,6 +11,6 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.9'
-  spec.dependency = 'Nest', '~> 0.1.0'
+  spec.dependency 'Nest', '~> 0.1.0'
 end
 
