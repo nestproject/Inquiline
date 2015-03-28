@@ -1,5 +1,7 @@
 # Inquiline
 
+[![Build Status](http://img.shields.io/travis/nestproject/Inquiline/master.svg?style=flat)](https://travis-ci.org/nestproject/Inquiline)
+
 Collection of utilities to aid use of the Nest Web Server Gateway Interface.
 
 ## Installation
