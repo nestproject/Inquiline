@@ -10,6 +10,7 @@
 		275B54CF1AC708A400EE3517 /* Inquiline.h in Headers */ = {isa = PBXBuildFile; fileRef = 275B54CE1AC708A400EE3517 /* Inquiline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		275B54D51AC708A500EE3517 /* Inquiline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275B54C91AC708A400EE3517 /* Inquiline.framework */; };
 		275B54DC1AC708A500EE3517 /* InquilineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B54DB1AC708A500EE3517 /* InquilineTests.swift */; };
+		275B54E61AC708ED00EE3517 /* Inquiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B54E51AC708ED00EE3517 /* Inquiline.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		275B54D41AC708A500EE3517 /* InquilineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InquilineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275B54DA1AC708A500EE3517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275B54DB1AC708A500EE3517 /* InquilineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquilineTests.swift; sourceTree = "<group>"; };
+		275B54E51AC708ED00EE3517 /* Inquiline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inquiline.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,9 @@
 				275B54D81AC708A500EE3517 /* InquilineTests */,
 				275B54CA1AC708A400EE3517 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		275B54CA1AC708A400EE3517 /* Products */ = {
 			isa = PBXGroup;
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				275B54CE1AC708A400EE3517 /* Inquiline.h */,
+				275B54E51AC708ED00EE3517 /* Inquiline.swift */,
 				275B54CC1AC708A400EE3517 /* Supporting Files */,
 			);
 			path = Inquiline;
@@ -209,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275B54E61AC708ED00EE3517 /* Inquiline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +321,7 @@
 		275B54E01AC708A500EE3517 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -326,12 +333,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		275B54E11AC708A500EE3517 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
