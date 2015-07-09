@@ -15,6 +15,22 @@ public typealias Status = String
 public typealias Header = (String, String)
 public typealias Headers = [Header]
 public typealias Body = String?
-public typealias Response = (Status, Headers, Body)
+public typealias NestResponse = (Status, Headers, Body)
 
-public typealias NestApplication = (Environ) -> (Response)
+public typealias NestApplication = Environ -> NestResponse
+
+public class Request {
+  public let environ:Environ
+
+  public init(environ:Environ) {
+    self.environ = environ
+  }
+
+  public var method:String {
+    return environ["REQUEST_METHOD"] as? String ?? ""
+  }
+
+  public var path:String {
+    return environ["PATH_INFO"] as? String ?? ""
+  }
+}

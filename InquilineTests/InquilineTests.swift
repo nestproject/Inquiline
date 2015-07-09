@@ -31,3 +31,16 @@ class InquilineTests: XCTestCase {
     XCTAssertNotNil(body as String?)
   }
 }
+
+class RequestTests: XCTestCase {
+  func testMethod() {
+    let request = Request(environ: ["REQUEST_METHOD": "PATCH"])
+    XCTAssertEqual(request.method, "PATCH")
+  }
+
+  func testPath() {
+    let request = Request(environ: ["PATH_INFO": "/test/"])
+    XCTAssertEqual(request.path, "/test/")
+  }
+}
+
