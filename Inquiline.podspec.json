@@ -24,5 +24,11 @@
     "Nest": [
       "~> 0.2.0"
     ]
+  },
+  "test_specification": {
+    "source_files": "InquilineSpecs/*.swift",
+    "dependencies": {
+      "Spectre": [ "~> 0.3.0" ]
+    }
   }
 }
