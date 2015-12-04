@@ -15,7 +15,7 @@
     "git": "https://github.com/nestproject/Inquiline.git",
     "tag": "0.2.0"
   },
-  "source_files": "Inquiline/*.swift",
+  "source_files": "Sources/*.swift",
   "platforms": {
     "ios": "8.0",
     "osx": "10.9"
@@ -26,7 +26,7 @@
     ]
   },
   "test_specification": {
-    "source_files": "InquilineSpecs/*.swift",
+    "source_files": "Specs/*.swift",
     "dependencies": {
       "Spectre": [ "~> 0.3.0" ]
     }
