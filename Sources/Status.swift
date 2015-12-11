@@ -1,6 +1,7 @@
 public enum Status : Int, CustomStringConvertible {
   case Continue = 100
   case SwitchingProtocols = 101
+  case Processing = 102
   case Ok = 200
   case Created = 201
   case Accepted = 202
@@ -8,6 +9,9 @@ public enum Status : Int, CustomStringConvertible {
   case NoContent = 204
   case ResetContent = 205
   case PartialContent = 206
+  case MultiStatus = 207
+  case AlreadyReported = 208
+  case IMUsed = 226
   case MultipleChoices = 300
   case MovedPermanently = 301
   case Found = 302
@@ -16,6 +20,7 @@ public enum Status : Int, CustomStringConvertible {
   case UseProxy = 305
   case Reserved = 306
   case TemporaryRedirect = 307
+  case PermanentRedirect = 308
   case BadRequest = 400
   case Unauthorized = 401
   case PaymentRequired = 402
@@ -34,12 +39,25 @@ public enum Status : Int, CustomStringConvertible {
   case UnsupportedMediaType = 415
   case RequestedRangeNotSatisfiable = 416
   case ExpectationFailed = 417
+  case MisdirectedRequest = 421
+  case UnprocessableEntity = 422
+  case Locked = 423
+  case FailedDependency = 424
+  case UpgradeRequired = 426
+  case PreconditionRequired = 428
+  case TooManyRequests = 429
+  case RequestHeaderFieldsTooLarge = 431
   case InternalServerError = 500
   case NotImplemented = 501
   case BadGateway = 502
   case ServiceUnavailable = 503
   case GatewayTimeout = 504
   case HTTPVersionNotSupported = 505
+  case VariantAlsoNegotiates = 506
+  case InsufficientStorage = 507
+  case LoopDetected = 508
+  case NotExtended = 510
+  case NetworkAuthenticationRequired = 511
 
   public var reason:String {
     switch self {
@@ -47,6 +65,8 @@ public enum Status : Int, CustomStringConvertible {
       return "CONTINUE"
     case .SwitchingProtocols:
       return "SWITCHING PROTOCOLS"
+    case .Processing:
+      return "PROCESSING"
     case .Ok:
       return "OK"
     case .Created:
@@ -61,6 +81,12 @@ public enum Status : Int, CustomStringConvertible {
       return "RESET CONTENT"
     case .PartialContent:
       return "PARTIAL CONTENT"
+    case .MultiStatus:
+      return "MULTI STATUS"
+    case .AlreadyReported:
+      return "ALREADY REPORTED"
+    case .IMUsed:
+      return "IM USED"
     case .MultipleChoices:
       return "MULTIPLE CHOICES"
     case .MovedPermanently:
@@ -77,6 +103,8 @@ public enum Status : Int, CustomStringConvertible {
       return "RESERVED"
     case .TemporaryRedirect:
       return "TEMPORARY REDIRECT"
+    case .PermanentRedirect:
+      return "PERMANENT REDIRECT"
     case .BadRequest:
       return "BAD REQUEST"
     case .Unauthorized:
@@ -113,6 +141,22 @@ public enum Status : Int, CustomStringConvertible {
       return "REQUESTED RANGE NOT SATISFIABLE"
     case .ExpectationFailed:
       return "EXPECTATION FAILED"
+    case .MisdirectedRequest:
+      return "MISDIRECTED REQUEST"
+    case .UnprocessableEntity:
+      return "UNPROCESSABLE ENTITY"
+    case .Locked:
+      return "LOCKED"
+    case .FailedDependency:
+      return "FAILED DEPENDENCY"
+    case .UpgradeRequired:
+      return "UPGRADE REQUIRED"
+    case .PreconditionRequired:
+      return "PRECONDITION REQUIRED"
+    case .TooManyRequests:
+      return "TOO MANY REQUESTS"
+    case .RequestHeaderFieldsTooLarge:
+      return "REQUEST HEADER FIELDS TOO LARGE"
     case .InternalServerError:
       return "INTERNAL SERVER ERROR"
     case .NotImplemented:
@@ -125,6 +169,16 @@ public enum Status : Int, CustomStringConvertible {
       return "GATEWAY TIMEOUT"
     case .HTTPVersionNotSupported:
       return "HTTP VERSION NOT SUPPORTED"
+    case .VariantAlsoNegotiates:
+      return "VARIANT ALSO NEGOTIATES"
+    case .InsufficientStorage:
+      return "INSUFFICIENT STORAGE"
+    case .LoopDetected:
+      return "LOOP DETECTED"
+    case .NotExtended:
+      return "NOT EXTENDED"
+    case .NetworkAuthenticationRequired:
+      return "NETWORK AUTHENTICATION REQUIRED"
     }
   }
 
