@@ -5,13 +5,14 @@ public struct Request : RequestType, CustomStringConvertible, CustomDebugStringC
   public var method:String
   public var path:String
   public var headers:[Header]
-  public var body:String?
+  public var content: PayloadConvertible?
+  public var body: PayloadType?
 
-  public init(method:String, path:String, headers:[Header]? = nil, body:String? = nil) {
+  public init(method:String, path:String, headers:[Header]? = nil, content: PayloadConvertible? = nil) {
     self.method = method
     self.path = path
     self.headers = headers ?? []
-    self.body = body
+    self.body = content?.toPayload()
   }
 
   public var description:String {
