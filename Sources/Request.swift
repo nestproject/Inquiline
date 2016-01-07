@@ -28,7 +28,7 @@ public struct Request : RequestType, CustomStringConvertible, CustomDebugStringC
 extension RequestType {
   public subscript(header: String) -> String? {
     get {
-      return headers.filter { $0.0 == header }.first?.1
+      return headers.filter { $0.0.lowercaseString == header.lowercaseString }.first?.1
     }
   }
 
