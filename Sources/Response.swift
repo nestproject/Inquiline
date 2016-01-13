@@ -31,7 +31,7 @@ public struct Response : ResponseType {
     }
   }
 
-  var contentType:String? {
+  public var contentType:String? {
     get {
       return self["Content-Type"]
     }
@@ -40,7 +40,7 @@ public struct Response : ResponseType {
     }
   }
 
-  var cacheControl:String? {
+  public var cacheControl:String? {
     get {
       return self["Content-Type"]
     }
