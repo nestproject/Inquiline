@@ -2,17 +2,38 @@ import Nest
 
 
 public struct Response : ResponseType {
-  public var status:Status
-  public var headers:[Header]
-  public var body:String?
+  public var status: Status
+  public var headers: [Header]
+  public var body: [UInt8]?
 
-  public init(_ status:Status, headers:[Header]? = nil, contentType:String? = nil, body:String? = nil) {
+  public init(_ status: Status,
+                headers: [Header]? = nil,
+                contentType: String? = nil,
+                body: String? = nil) {
+    self.init(status,
+              headers: headers,
+              contentType: contentType,
+              body: body?.utf8)
+  }
+    
+  public init<
+    ByteSequence: CollectionType
+    where ByteSequence.Generator.Element == UInt8
+    >(_ status: Status,
+        headers: [Header]? = nil,
+        contentType: String? = nil,
+        body: ByteSequence?) {
     self.status = status
     self.headers = headers ?? []
-    self.body = body
-
+    
+    if let _body = body {
+        self.body = Array(_body)
+    } else {
+        self.body = nil
+    }
+    
     if let contentType = contentType {
-      self.headers.append(("Content-Type", contentType))
+        self.headers.append(("Content-Type", contentType))
     }
   }
 
@@ -31,7 +52,7 @@ public struct Response : ResponseType {
     }
   }
 
-  public var contentType:String? {
+  public var contentType: String? {
     get {
       return self["Content-Type"]
     }
@@ -40,7 +61,7 @@ public struct Response : ResponseType {
     }
   }
 
-  public var cacheControl:String? {
+  public var cacheControl: String? {
     get {
       return self["Content-Type"]
     }
