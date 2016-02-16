@@ -2,23 +2,36 @@ import Nest
 
 
 public struct Request : RequestType, CustomStringConvertible, CustomDebugStringConvertible {
-  public var method:String
-  public var path:String
-  public var headers:[Header]
-  public var body:String?
+  public var method: String
+  public var path: String
+  public var headers: [Header]
+  public var body: PayloadType?
 
-  public init(method:String, path:String, headers:[Header]? = nil, body:String? = nil) {
+  public init(method: String, path: String, headers: [Header]? = nil, body: String? = nil) {
+    self.init(method: method,
+              path: path,
+              headers: headers,
+              body: body?.byteArray ?? [])
+  }
+    
+  public init<
+    ByteSequence: CollectionType
+    where ByteSequence.Generator.Element == Byte
+    >(method: String,
+      path: String,
+      headers: [Header]? = nil,
+      body: ByteSequence) {
     self.method = method
     self.path = path
     self.headers = headers ?? []
-    self.body = body
+    self.body = Stream(body)
   }
 
-  public var description:String {
+  public var description: String {
     return "\(method) \(path)"
   }
 
-  public var debugDescription:String {
+  public var debugDescription: String {
     let request = ["\(method) \(path)"] + headers.map { "\($0) \($1)" }
     return request.joinWithSeparator("\n")
   }
