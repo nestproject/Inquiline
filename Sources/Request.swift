@@ -5,31 +5,26 @@ public struct Request : RequestType, CustomStringConvertible, CustomDebugStringC
   public var method: String
   public var path: String
   public var headers: [Header]
-  public var body: [UInt8]?
+  public var body: PayloadType?
 
   public init(method: String, path: String, headers: [Header]? = nil, body: String? = nil) {
     self.init(method: method,
               path: path,
               headers: headers,
-              body: body?.utf8)
+              body: body?.byteArray ?? [])
   }
     
   public init<
     ByteSequence: CollectionType
-    where ByteSequence.Generator.Element == UInt8
+    where ByteSequence.Generator.Element == Int8
     >(method: String,
       path: String,
       headers: [Header]? = nil,
-      body: ByteSequence?) {
+      body: ByteSequence) {
     self.method = method
     self.path = path
     self.headers = headers ?? []
-    
-    if let _body = body {
-        self.body = Array(_body)
-    } else {
-        self.body = nil
-    }
+    self.body = Stream(body)
   }
 
   public var description: String {

@@ -4,7 +4,7 @@ import Nest
 public struct Response : ResponseType {
   public var status: Status
   public var headers: [Header]
-  public var body: [UInt8]?
+  public var body: PayloadType?
 
   public init(_ status: Status,
                 headers: [Header]? = nil,
@@ -13,25 +13,20 @@ public struct Response : ResponseType {
     self.init(status,
               headers: headers,
               contentType: contentType,
-              body: body?.utf8)
+              body: body?.byteArray ?? [])
   }
     
   public init<
     ByteSequence: CollectionType
-    where ByteSequence.Generator.Element == UInt8
+    where ByteSequence.Generator.Element == Int8
     >(_ status: Status,
         headers: [Header]? = nil,
         contentType: String? = nil,
-        body: ByteSequence?) {
+        body: ByteSequence) {
     self.status = status
     self.headers = headers ?? []
-    
-    if let _body = body {
-        self.body = Array(_body)
-    } else {
-        self.body = nil
-    }
-    
+    self.body = Stream(body)
+
     if let contentType = contentType {
         self.headers.append(("Content-Type", contentType))
     }
