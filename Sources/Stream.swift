@@ -2,12 +2,12 @@ import Nest
 
 public struct Stream: PayloadType {
     
-    public let generator: Void -> Int8?
+    public let generator: Void -> Byte?
     
     public init<
         ByteSequence: CollectionType
         where
-        ByteSequence.Generator.Element == Int8
+        ByteSequence.Generator.Element == Byte
         >(_ sequence: ByteSequence) {
         
         // Wrapping Indexing generator because can't set to concrete type
@@ -15,7 +15,7 @@ public struct Stream: PayloadType {
         generator = {  indexing.next() }
     }
     
-    public func next() -> Int8? {
+    public func next() -> Byte? {
         return generator()
     }
 }

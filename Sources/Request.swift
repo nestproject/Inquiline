@@ -16,7 +16,7 @@ public struct Request : RequestType, CustomStringConvertible, CustomDebugStringC
     
   public init<
     ByteSequence: CollectionType
-    where ByteSequence.Generator.Element == Int8
+    where ByteSequence.Generator.Element == Byte
     >(method: String,
       path: String,
       headers: [Header]? = nil,

@@ -18,7 +18,7 @@ public struct Response : ResponseType {
     
   public init<
     ByteSequence: CollectionType
-    where ByteSequence.Generator.Element == Int8
+    where ByteSequence.Generator.Element == Byte
     >(_ status: Status,
         headers: [Header]? = nil,
         contentType: String? = nil,
