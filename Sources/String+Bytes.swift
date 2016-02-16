@@ -2,6 +2,6 @@ import Nest
 
 extension String {
     public var byteArray: [Byte] {
-        return Array(utf8)
+        return utf8.map { Byte($0) }
     }
 }
