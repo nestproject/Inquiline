@@ -6,14 +6,14 @@ public protocol PayloadConvertible {
 }
 
 
-class BytesPayload : PayloadType {
-  var bytes: [Int8]
+public final class BytesPayload : PayloadType {
+  public var bytes: [Int8]
 
-  init(bytes: [Int8]) {
+  public init(bytes: [Int8]) {
     self.bytes = bytes
   }
 
-  func next() -> Int8? {
+  public func next() -> Int8? {
     if bytes.isEmpty {
       return nil
     }
