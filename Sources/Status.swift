@@ -62,123 +62,123 @@ public enum Status : Int, CustomStringConvertible {
   public var reason:String {
     switch self {
     case .Continue:
-      return "CONTINUE"
+      return "Continue"
     case .SwitchingProtocols:
-      return "SWITCHING PROTOCOLS"
+      return "Switching Protocols"
     case .Processing:
-      return "PROCESSING"
+      return "Processing"
     case .Ok:
       return "OK"
     case .Created:
-      return "CREATED"
+      return "Created"
     case .Accepted:
-      return "ACCEPTED"
+      return "Accepted"
     case .NonAuthoritiveInformation:
-      return "NON-AUTHORITATIVE INFORMATION"
+      return "Non-Authoritative Information"
     case .NoContent:
-      return "NO CONTENT"
+      return "No Content"
     case .ResetContent:
-      return "RESET CONTENT"
+      return "Reset Content"
     case .PartialContent:
-      return "PARTIAL CONTENT"
+      return "Partial Content"
     case .MultiStatus:
-      return "MULTI STATUS"
+      return "Multi-Status"
     case .AlreadyReported:
-      return "ALREADY REPORTED"
+      return "Already Reported"
     case .IMUsed:
-      return "IM USED"
+      return "IM Used"
     case .MultipleChoices:
-      return "MULTIPLE CHOICES"
+      return "Multiple Choices"
     case .MovedPermanently:
-      return "MOVED PERMANENTLY"
+      return "Moved Permanently"
     case .Found:
-      return "FOUND"
+      return "Found"
     case .SeeOther:
-      return "SEE OTHER"
+      return "See Other"
     case .NotModified:
-      return "NOT MODIFIED"
+      return "Not Modified"
     case .UseProxy:
-      return "USE PROXY"
+      return "Use Proxy"
     case .Reserved:
-      return "RESERVED"
+      return "Reserved"
     case .TemporaryRedirect:
-      return "TEMPORARY REDIRECT"
+      return "Temporary Redirect"
     case .PermanentRedirect:
-      return "PERMANENT REDIRECT"
+      return "Permanent Redirect"
     case .BadRequest:
-      return "BAD REQUEST"
+      return "Bad Request"
     case .Unauthorized:
-      return "UNAUTHORIZED"
+      return "Unauthorized"
     case .PaymentRequired:
-      return "PAYMENT REQUIRED"
+      return "Payment Required"
     case .Forbidden:
-      return "FORBIDDEN"
+      return "Forbidden"
     case .NotFound:
-      return "NOT FOUND"
+      return "Not Found"
     case .MethodNotAllowed:
-      return "METHOD NOT ALLOWED"
+      return "Method Not Allowed"
     case .NotAcceptable:
-      return "NOT ACCEPTABLE"
+      return "Not Acceptable"
     case .ProxyAuthenticationRequired:
-      return "PROXY AUTHENTICATION REQUIRED"
+      return "Proxy Authentication Required"
     case .RequestTimeout:
-      return "REQUEST TIMEOUT"
+      return "Request Timeout"
     case .Conflict:
-      return "CONFLICT"
+      return "Conflict"
     case .Gone:
-      return "GONE"
+      return "Gone"
     case .LengthRequired:
-      return "LENGTH REQUIRED"
+      return "Length Required"
     case .PreconditionFailed:
-      return "PRECONDITION FAILED"
+      return "Precondition Failed"
     case .RequestEntityTooLarge:
-      return "REQUEST ENTITY TOO LARGE"
+      return "Request Entity Too Large"
     case .RequestURITooLong:
-      return "REQUEST-URI TOO LONG"
+      return "Request-URI Too Long"
     case .UnsupportedMediaType:
-      return "UNSUPPORTED MEDIA TYPE"
+      return "Unsupported Media Type"
     case .RequestedRangeNotSatisfiable:
-      return "REQUESTED RANGE NOT SATISFIABLE"
+      return "Requested range not satisfiable"
     case .ExpectationFailed:
-      return "EXPECTATION FAILED"
+      return "Expectation Failed"
     case .MisdirectedRequest:
-      return "MISDIRECTED REQUEST"
+      return "Misdirected Request"
     case .UnprocessableEntity:
-      return "UNPROCESSABLE ENTITY"
+      return "Unprocessable Entity"
     case .Locked:
-      return "LOCKED"
+      return "Locked"
     case .FailedDependency:
-      return "FAILED DEPENDENCY"
+      return "Failed Dependency"
     case .UpgradeRequired:
-      return "UPGRADE REQUIRED"
+      return "Upgrade Required"
     case .PreconditionRequired:
-      return "PRECONDITION REQUIRED"
+      return "Precondition Required"
     case .TooManyRequests:
-      return "TOO MANY REQUESTS"
+      return "Too Many Requests"
     case .RequestHeaderFieldsTooLarge:
-      return "REQUEST HEADER FIELDS TOO LARGE"
+      return "Request Header Fields Too Large"
     case .InternalServerError:
-      return "INTERNAL SERVER ERROR"
+      return "Internal Server Error"
     case .NotImplemented:
-      return "NOT IMPLEMENTED"
+      return "Not Implemented"
     case .BadGateway:
-      return "BAD GATEWAY"
+      return "Bad Gateway"
     case .ServiceUnavailable:
-      return "SERVICE UNAVAILABLE"
+      return "Service Unavailable"
     case .GatewayTimeout:
-      return "GATEWAY TIMEOUT"
+      return "Gateway Timeout"
     case .HTTPVersionNotSupported:
-      return "HTTP VERSION NOT SUPPORTED"
+      return "HTTP Version Not Supported"
     case .VariantAlsoNegotiates:
-      return "VARIANT ALSO NEGOTIATES"
+      return "Variant Also Negotiates"
     case .InsufficientStorage:
-      return "INSUFFICIENT STORAGE"
+      return "Insufficient Storage"
     case .LoopDetected:
-      return "LOOP DETECTED"
+      return "Loop Detected"
     case .NotExtended:
-      return "NOT EXTENDED"
+      return "Not Extended"
     case .NetworkAuthenticationRequired:
-      return "NETWORK AUTHENTICATION REQUIRED"
+      return "Network Authentication Required"
     }
   }
 
