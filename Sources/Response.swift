@@ -4,12 +4,12 @@ import Nest
 public struct Response : ResponseType {
   public var status:Status
   public var headers:[Header]
-  public var body:String?
+  public var body: PayloadType?
 
-  public init(_ status:Status, headers:[Header]? = nil, contentType:String? = nil, body:String? = nil) {
+  public init(_ status:Status, headers:[Header]? = nil, contentType:String? = nil, content: PayloadConvertible? = nil) {
     self.status = status
     self.headers = headers ?? []
-    self.body = body
+    self.body = content?.toPayload()
 
     if let contentType = contentType {
       self.headers.append(("Content-Type", contentType))
