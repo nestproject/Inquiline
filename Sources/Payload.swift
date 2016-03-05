@@ -7,16 +7,19 @@ public protocol PayloadConvertible {
 
 
 class BytesPayload : PayloadType {
-  var bytes: [UInt8]
+  var bytes: [UInt8]?
 
   init(bytes: [UInt8]) {
     self.bytes = bytes
   }
 
   func next() -> [UInt8]? {
-    let bytes = self.bytes
-    self.bytes = []
-    return bytes
+    if let bytes = bytes {
+      self.bytes = nil
+      return bytes
+    }
+
+    return nil
   }
 }
 
