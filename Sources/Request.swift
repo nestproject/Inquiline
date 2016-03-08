@@ -52,8 +52,8 @@ extension RequestType {
     return nil
   }
 
-  /// Returns the content serialised as a String
-  public var content: String? {
+  /// Returns the body's raw bytes
+  public var bytes: [UInt8]? {
     if let contentLength = contentLength, body = body {
       var body = body
       var buffer: [UInt8] = []
@@ -64,8 +64,16 @@ extension RequestType {
         }
       }
 
-      buffer.append(0)
+      return buffer
+    }
 
+    return nil
+  }
+
+  /// Returns the content serialised as a String
+  public var content: String? {
+    if let bytes = bytes {
+      let buffer = bytes + [0]
       // TODO: Respect the content encoding
       return String.fromCString(buffer.map { Int8($0) })
     }
