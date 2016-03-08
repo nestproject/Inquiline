@@ -52,6 +52,27 @@ extension RequestType {
     return nil
   }
 
+  /// Returns the content serialised as a String
+  public var content: String? {
+    if let contentLength = contentLength, body = body {
+      var body = body
+      var buffer: [UInt8] = []
+
+      while buffer.count < contentLength {
+        if let bytes = body.next() {
+          buffer += bytes
+        }
+      }
+
+      buffer.append(0)
+
+      // TODO: Respect the content encoding
+      return String.fromCString(buffer.map { Int8($0) })
+    }
+
+    return nil
+  }
+
   /// Returns the Accept header
   public var accept:String? {
     return self["Accept"]
