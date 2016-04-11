@@ -21,11 +21,7 @@ public struct Request : RequestType, CustomStringConvertible, CustomDebugStringC
 
   public var debugDescription:String {
     let request = ["\(method) \(path)"] + headers.map { "\($0) \($1)" }
-#if swift(>=3.0)
     return request.joined(separator: "\n")
-#else
-    return request.joinedWithSeparator("\n")
-#endif
   }
 }
 
@@ -33,11 +29,7 @@ public struct Request : RequestType, CustomStringConvertible, CustomDebugStringC
 extension RequestType {
   public subscript(header: String) -> String? {
     get {
-#if swift(>=3.0)
       return headers.filter { $0.0.lowercased() == header.lowercased() }.first?.1
-#else
-      return headers.filter { $0.0.lowercaseString == header.lowercaseString }.first?.1
-#endif
     }
   }
 
@@ -83,11 +75,7 @@ extension RequestType {
     if let bytes = bytes {
       let buffer = bytes + [0]
       // TODO: Respect the content encoding
-#if swift(>=3.0)
       return String.init(validatingUTF8: buffer.map { Int8($0) })
-#else
-      return String.fromCString(buffer.map { Int8($0) })
-#endif
     }
 
     return nil
