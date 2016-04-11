@@ -1,8 +1,12 @@
 language: objective-c
-osx_image: xcode7
+osx_image: xcode7.2
+env:
+  - SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2016-03-01-a
 before_install:
   - TOOLCHAIN_VERSION=swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a
   - curl -O https://swift.org/builds/development/xcode/${TOOLCHAIN_VERSION}/${TOOLCHAIN_VERSION}-osx.pkg
   - sudo installer -pkg ${TOOLCHAIN_VERSION}-osx.pkg -target /
-install: brew install --HEAD kylef/formulae/conche
+install: 
+  - brew install --HEAD kylef/formulae/conche
+  - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/02090c7ede5a637b76e6df1710e83cd0bbe7dcdf/swiftenv-install.sh)"
 script: conche test
