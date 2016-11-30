@@ -33,7 +33,7 @@ request.cacheControl
 Inquiline provides an implementation of `ResponseType`.
 
 ```swift
-let response = Response(.Ok, contentType: "plain/text", body: "Hello World")
+let response = Response(.ok, contentType: "plain/text", body: "Hello World")
 ```
 
 ```http

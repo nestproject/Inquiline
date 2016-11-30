@@ -1,183 +1,183 @@
 public enum Status : Int, CustomStringConvertible {
-  case Continue = 100
-  case SwitchingProtocols = 101
-  case Processing = 102
-  case Ok = 200
-  case Created = 201
-  case Accepted = 202
-  case NonAuthoritiveInformation = 203
-  case NoContent = 204
-  case ResetContent = 205
-  case PartialContent = 206
-  case MultiStatus = 207
-  case AlreadyReported = 208
-  case IMUsed = 226
-  case MultipleChoices = 300
-  case MovedPermanently = 301
-  case Found = 302
-  case SeeOther = 303
-  case NotModified = 304
-  case UseProxy = 305
-  case Reserved = 306
-  case TemporaryRedirect = 307
-  case PermanentRedirect = 308
-  case BadRequest = 400
-  case Unauthorized = 401
-  case PaymentRequired = 402
-  case Forbidden = 403
-  case NotFound = 404
-  case MethodNotAllowed = 405
-  case NotAcceptable = 406
-  case ProxyAuthenticationRequired = 407
-  case RequestTimeout = 408
-  case Conflict = 409
-  case Gone = 410
-  case LengthRequired = 411
-  case PreconditionFailed = 412
-  case RequestEntityTooLarge = 413
-  case RequestURITooLong = 414
-  case UnsupportedMediaType = 415
-  case RequestedRangeNotSatisfiable = 416
-  case ExpectationFailed = 417
-  case MisdirectedRequest = 421
-  case UnprocessableEntity = 422
-  case Locked = 423
-  case FailedDependency = 424
-  case UpgradeRequired = 426
-  case PreconditionRequired = 428
-  case TooManyRequests = 429
-  case RequestHeaderFieldsTooLarge = 431
-  case InternalServerError = 500
-  case NotImplemented = 501
-  case BadGateway = 502
-  case ServiceUnavailable = 503
-  case GatewayTimeout = 504
-  case HTTPVersionNotSupported = 505
-  case VariantAlsoNegotiates = 506
-  case InsufficientStorage = 507
-  case LoopDetected = 508
-  case NotExtended = 510
-  case NetworkAuthenticationRequired = 511
+  case `continue` = 100
+  case switchingProtocols = 101
+  case processing = 102
+  case ok = 200
+  case created = 201
+  case accepted = 202
+  case nonAuthoritiveInformation = 203
+  case noContent = 204
+  case resetContent = 205
+  case partialContent = 206
+  case multiStatus = 207
+  case alreadyReported = 208
+  case imUsed = 226
+  case multipleChoices = 300
+  case movedPermanently = 301
+  case found = 302
+  case seeOther = 303
+  case notModified = 304
+  case useProxy = 305
+  case reserved = 306
+  case temporaryRedirect = 307
+  case permanentRedirect = 308
+  case badRequest = 400
+  case unauthorized = 401
+  case paymentRequired = 402
+  case forbidden = 403
+  case notFound = 404
+  case methodNotAllowed = 405
+  case notAcceptable = 406
+  case proxyAuthenticationRequired = 407
+  case requestTimeout = 408
+  case conflict = 409
+  case gone = 410
+  case lengthRequired = 411
+  case preconditionFailed = 412
+  case requestEntityTooLarge = 413
+  case requestURITooLong = 414
+  case unsupportedMediaType = 415
+  case requestedRangeNotSatisfiable = 416
+  case expectationFailed = 417
+  case misdirectedRequest = 421
+  case unprocessableEntity = 422
+  case locked = 423
+  case failedDependency = 424
+  case upgradeRequired = 426
+  case preconditionRequired = 428
+  case tooManyRequests = 429
+  case requestHeaderFieldsTooLarge = 431
+  case internalServerError = 500
+  case notImplemented = 501
+  case badGateway = 502
+  case serviceUnavailable = 503
+  case gatewayTimeout = 504
+  case httpVersionNotSupported = 505
+  case variantAlsoNegotiates = 506
+  case insufficientStorage = 507
+  case loopDetected = 508
+  case notExtended = 510
+  case networkAuthenticationRequired = 511
 
   public var reason:String {
     switch self {
-    case .Continue:
+    case .continue:
       return "Continue"
-    case .SwitchingProtocols:
+    case .switchingProtocols:
       return "Switching Protocols"
-    case .Processing:
+    case .processing:
       return "Processing"
-    case .Ok:
+    case .ok:
       return "OK"
-    case .Created:
+    case .created:
       return "Created"
-    case .Accepted:
+    case .accepted:
       return "Accepted"
-    case .NonAuthoritiveInformation:
+    case .nonAuthoritiveInformation:
       return "Non-Authoritative Information"
-    case .NoContent:
+    case .noContent:
       return "No Content"
-    case .ResetContent:
+    case .resetContent:
       return "Reset Content"
-    case .PartialContent:
+    case .partialContent:
       return "Partial Content"
-    case .MultiStatus:
+    case .multiStatus:
       return "Multi-Status"
-    case .AlreadyReported:
+    case .alreadyReported:
       return "Already Reported"
-    case .IMUsed:
+    case .imUsed:
       return "IM Used"
-    case .MultipleChoices:
+    case .multipleChoices:
       return "Multiple Choices"
-    case .MovedPermanently:
+    case .movedPermanently:
       return "Moved Permanently"
-    case .Found:
+    case .found:
       return "Found"
-    case .SeeOther:
+    case .seeOther:
       return "See Other"
-    case .NotModified:
+    case .notModified:
       return "Not Modified"
-    case .UseProxy:
+    case .useProxy:
       return "Use Proxy"
-    case .Reserved:
+    case .reserved:
       return "Reserved"
-    case .TemporaryRedirect:
+    case .temporaryRedirect:
       return "Temporary Redirect"
-    case .PermanentRedirect:
+    case .permanentRedirect:
       return "Permanent Redirect"
-    case .BadRequest:
+    case .badRequest:
       return "Bad Request"
-    case .Unauthorized:
+    case .unauthorized:
       return "Unauthorized"
-    case .PaymentRequired:
+    case .paymentRequired:
       return "Payment Required"
-    case .Forbidden:
+    case .forbidden:
       return "Forbidden"
-    case .NotFound:
+    case .notFound:
       return "Not Found"
-    case .MethodNotAllowed:
+    case .methodNotAllowed:
       return "Method Not Allowed"
-    case .NotAcceptable:
+    case .notAcceptable:
       return "Not Acceptable"
-    case .ProxyAuthenticationRequired:
+    case .proxyAuthenticationRequired:
       return "Proxy Authentication Required"
-    case .RequestTimeout:
+    case .requestTimeout:
       return "Request Timeout"
-    case .Conflict:
+    case .conflict:
       return "Conflict"
-    case .Gone:
+    case .gone:
       return "Gone"
-    case .LengthRequired:
+    case .lengthRequired:
       return "Length Required"
-    case .PreconditionFailed:
+    case .preconditionFailed:
       return "Precondition Failed"
-    case .RequestEntityTooLarge:
+    case .requestEntityTooLarge:
       return "Request Entity Too Large"
-    case .RequestURITooLong:
+    case .requestURITooLong:
       return "Request-URI Too Long"
-    case .UnsupportedMediaType:
+    case .unsupportedMediaType:
       return "Unsupported Media Type"
-    case .RequestedRangeNotSatisfiable:
+    case .requestedRangeNotSatisfiable:
       return "Requested range not satisfiable"
-    case .ExpectationFailed:
+    case .expectationFailed:
       return "Expectation Failed"
-    case .MisdirectedRequest:
+    case .misdirectedRequest:
       return "Misdirected Request"
-    case .UnprocessableEntity:
+    case .unprocessableEntity:
       return "Unprocessable Entity"
-    case .Locked:
+    case .locked:
       return "Locked"
-    case .FailedDependency:
+    case .failedDependency:
       return "Failed Dependency"
-    case .UpgradeRequired:
+    case .upgradeRequired:
       return "Upgrade Required"
-    case .PreconditionRequired:
+    case .preconditionRequired:
       return "Precondition Required"
-    case .TooManyRequests:
+    case .tooManyRequests:
       return "Too Many Requests"
-    case .RequestHeaderFieldsTooLarge:
+    case .requestHeaderFieldsTooLarge:
       return "Request Header Fields Too Large"
-    case .InternalServerError:
+    case .internalServerError:
       return "Internal Server Error"
-    case .NotImplemented:
+    case .notImplemented:
       return "Not Implemented"
-    case .BadGateway:
+    case .badGateway:
       return "Bad Gateway"
-    case .ServiceUnavailable:
+    case .serviceUnavailable:
       return "Service Unavailable"
-    case .GatewayTimeout:
+    case .gatewayTimeout:
       return "Gateway Timeout"
-    case .HTTPVersionNotSupported:
+    case .httpVersionNotSupported:
       return "HTTP Version Not Supported"
-    case .VariantAlsoNegotiates:
+    case .variantAlsoNegotiates:
       return "Variant Also Negotiates"
-    case .InsufficientStorage:
+    case .insufficientStorage:
       return "Insufficient Storage"
-    case .LoopDetected:
+    case .loopDetected:
       return "Loop Detected"
-    case .NotExtended:
+    case .notExtended:
       return "Not Extended"
-    case .NetworkAuthenticationRequired:
+    case .networkAuthenticationRequired:
       return "Network Authentication Required"
     }
   }
